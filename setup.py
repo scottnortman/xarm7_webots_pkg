@@ -20,6 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'xarm7_webots_node = xarm7_webots_pkg.xarm7_webots_py:main'
         ],
     },
 )
