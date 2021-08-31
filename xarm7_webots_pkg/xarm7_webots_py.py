@@ -22,7 +22,7 @@ class XArm7WebotsNode( WebotsNode ):
 
     def __init__( self, args ):
         
-        super().__init__('xarmt_webots_node', args=args)
+        super().__init__('xarm_webots_node', args=args)
 
         
         self.motors = {}
@@ -43,17 +43,20 @@ class XArm7WebotsNode( WebotsNode ):
         
 
         # Subsribe to enable command of robot joints
-        self.create_subscription( JointState, 'target_joint_states', self.target_joint_states_callback, 10 )
+        self.create_subscription( JointState, 'joint_states', self.target_joint_states_callback, 10 )
 
     def target_joint_states_callback( self, joint_states_msg ):
         for idx,name in enumerate(joint_states_msg.name):
-            self.motors[name].setPosition( joint_states_msg.position[idx] )
-        
-        
+            # default names do not have xarm_
+            try:
+                self.motors[name].setPosition( joint_states_msg.position[idx] )
+            except KeyError:
+                name = 'xarm_' + name
 
-
-
-    
+            try:
+                self.motors[name].setPosition( joint_states_msg.position[idx] )
+            except KeyError:
+                pass
         
 
 

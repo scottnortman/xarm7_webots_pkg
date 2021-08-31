@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 '''
-File:   xarm7_webots.launch.py
+File:   xarm7_webots_jointgui.launch.py
 Desc:   ROS2 launch file to start webots and a ROS2 node
 Date:   Aug 30 2021
 Auth:   scott@restfulrobotics.com
@@ -30,12 +30,27 @@ def generate_launch_description():
             ('executable', 'xarm7_webots_node'),
             ('output', 'screen'),
             ('world', '/home/snortman/ros2_ws/src/xarm7_webots_pkg/webots/worlds/xarm7.wbt'),
-            ('node_prefix', 'webots'),
-            ('publish_tf', 'False') # stops robot tf publisher and joint state publisher
+            ('node_prefix', 'webots')
         ]
     ) #webots_node
 
+    # see here
+    #https://answers.ros.org/question/373824/ros2-launch-file-arguments-subsititutions-xacro-and-node-parameters/
+    joint_state_pub_gui = Node(
+        package='joint_state_publisher_gui',
+        executable='joint_state_publisher_gui',
+        output='screen',
+        namespace='',
+        arguments=[
+            '/home/snortman/ros2_ws/src/xarm7_webots_pkg/description/urdf/xarm7.urdf'
+        ],
+        remappings=[
+            ('joint_states','target_joint_states')
+        ]
+    )#joint_state_pub_gui
+
     ld.add_action(webots_node)
+    ld.add_action(joint_state_pub_gui)
 
     return ld
 
