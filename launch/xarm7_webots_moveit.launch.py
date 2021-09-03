@@ -181,8 +181,8 @@ def generate_launch_description():
 
 
     ld.add_action(static_frame_world_tx_link_base)
-    #ld.add_action(webots_node)
+    ld.add_action(webots_node)
     ld.add_action(xarm_planner_node)
-    #ld.add_action(xarm_traj_req_node)
+    ld.add_action(xarm_traj_req_node)
 
     return ld
