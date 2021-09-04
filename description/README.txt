@@ -14,8 +14,6 @@ References
 
 
 
-Note:  This requires a ROS 1 installation to access the command line tools xacro
-
 To generate the URDF file for the xarm7 for import into webots
 
 1) Download / install xarm_ros2 package

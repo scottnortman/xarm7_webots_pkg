@@ -43,9 +43,6 @@ def generate_launch_description():
         namespace='',
         arguments=[
             '/home/snortman/ros2_ws/src/xarm7_webots_pkg/description/urdf/xarm7.urdf'
-        ],
-        remappings=[
-            ('joint_states','target_joint_states')
         ]
     )#joint_state_pub_gui
 

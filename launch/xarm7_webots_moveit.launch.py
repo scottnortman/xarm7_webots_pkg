@@ -162,7 +162,7 @@ def generate_launch_description():
         ]
     ) #webots_node
 
-    # Call xarm7 launch file
+    # Call xarm7 planner launch file
     xarm_planner_node = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(get_package_share_directory('xarm_planner'), 'launch', 'xarm7_planner_fake.launch.py' )

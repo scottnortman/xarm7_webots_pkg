@@ -30,10 +30,10 @@ PROTO xarm7 [
     children [
       Shape {
         appearance DEF xarm_White PBRAppearance {
-          baseColor 0.500000 0.500000 0.500000
+          baseColor 0.900000 0.900000 0.900000
           transparency 0.000000
           roughness 1.000000
-          metalness 0
+          metalness 0.1
           emissiveColor 0.000000 0.000000 0.000000
         }
         geometry DEF link_base IndexedFaceSet {
@@ -53,8 +53,8 @@ PROTO xarm7 [
           position 0.000000 
           axis 0.000000 0.000000 1.000000
           anchor 0.000000 0.000000 0.267000
-          dampingConstant 10.0
-          staticFriction 1.0
+          dampingConstant 0.0
+          staticFriction 0.0
         }
         device [
           RotationalMotor {
@@ -91,8 +91,8 @@ PROTO xarm7 [
                 position 0.000000 
                 axis 0.000000 1.000000 -0.000004
                 anchor 0.000000 0.000000 0.000000
-                dampingConstant 10.0
-                staticFriction 1.0
+                dampingConstant 0.0
+                staticFriction 0.0
               }
               device [
                 RotationalMotor {
@@ -129,8 +129,8 @@ PROTO xarm7 [
                       position 0.000000 
                       axis 0.000000 -1.000000 -0.000004
                       anchor 0.000000 -0.293000 0.000000
-                      dampingConstant 5.0
-                      staticFriction 1.0
+                      dampingConstant 0.0
+                      staticFriction 0.0
                     }
                     device [
                       RotationalMotor {
@@ -167,8 +167,8 @@ PROTO xarm7 [
                             position 0.000000 
                             axis 0.000000 -1.000000 -0.000004
                             anchor 0.052500 0.000000 0.000000
-                            dampingConstant 5.0
-                            staticFriction 1.0
+                            dampingConstant 0.0
+                            staticFriction 0.0
                           }
                           device [
                             RotationalMotor {
@@ -205,8 +205,8 @@ PROTO xarm7 [
                                   position 0.000000 
                                   axis 0.000000 -1.000000 -0.000004
                                   anchor 0.077500 -0.342500 0.000000
-                                  dampingConstant 5.0
-                                  staticFriction 1.0
+                                  dampingConstant 0.0
+                                  staticFriction 0.0
                                 }
                                 device [
                                   RotationalMotor {
@@ -243,8 +243,8 @@ PROTO xarm7 [
                                         position 0.000000 
                                         axis 0.000000 -1.000000 -0.000004
                                         anchor 0.000000 0.000000 0.000000
-                                        dampingConstant 2.0
-                                        staticFriction 1.0
+                                        dampingConstant 0.0
+                                        staticFriction 0.0
                                       }
                                       device [
                                         RotationalMotor {
@@ -281,8 +281,8 @@ PROTO xarm7 [
                                               position 0.000000 
                                               axis 0.000000 1.000000 -0.000004
                                               anchor 0.076000 0.097000 0.000000
-                                              dampingConstant 2.0
-                                              staticFriction 1.0
+                                              dampingConstant 0.0
+                                              staticFriction 0.0
                                             }
                                             device [
                                               RotationalMotor {
